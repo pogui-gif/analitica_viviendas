@@ -2,7 +2,7 @@ name: Build and Release Module
 
 on:
   push:
-    branches: [ dev ]  # Se ejecuta al subir cambios a la rama dev
+    branches: [ main, dev ]  # Se ejecuta al subir cambios a las ramas main o dev
 
 jobs:
   build:
