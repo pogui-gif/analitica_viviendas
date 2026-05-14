@@ -3,6 +3,8 @@ name: Build and Release Module
 on:
   push:
     branches: [ main, dev ]  # Se ejecuta al subir cambios a las ramas main o dev
+  pull_request:
+    branches: [ main, dev ]  # Se ejecuta al abrir un pull request hacia
 
 jobs:
   build:
