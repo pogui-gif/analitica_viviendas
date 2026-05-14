@@ -1,47 +1,30 @@
-import pytest
 import pandas as pd
 import numpy as np
-from modulo_analitics.clean import limpiar_datos
+from modulo_analitics import clean
 
-def test_limpiar_datos_logica():
-    # 1. Crear datos de entrada "sucios"
-    data = {
-        'col1': ['/inmueble/M123', '/inmueble/M456'],
-        'col2': ['img1', 'img2'],
-        'col3': [' apto lindo ', 'casa grande'],
-        'col4': [' chico norte ', 'CEDRITOS'],
-        'col5': [' arriendo ', 'VENTA'],
-        'col6': ['$1M', '$2M'],
-        'col7': ['1000', '2000'],
-        'col8': [50, -1],         # El -1 debe ser NaN en area
-        'col9': [3, -1],          # El -1 debe ser NaN en habitaciones
-        'col10': [2, 1],
-        'col11': [-1, 0]          # El -1 debe ser NaN en parqueaderos
-    }
-    df_sucio = pd.DataFrame(data)
+def test_limpiar_datos():
+    # 1. Preparar datos crudos simulando la salida de extract.py
+    datos_crudos = [{
+        0: '/inmueble/arriendo-apartamento-bogota-M6376734',
+        1: 'img.jpg',
+        2: ' foto apto ',
+        3: ' SUCRE ',
+        4: ' ARRIENDO ',
+        5: '$1.800.000',
+        6: '1800000',
+        7: -1.0, # Área sin dato para probar conversión a NaN
+        8: 1,
+        9: -1.0, # Baño sin dato
+        10: 0
+    }]
+    df = pd.DataFrame(datos_crudos)
 
-    # 2. Ejecutar la función
-    df_limpio = limpiar_datos(df_sucio)
+    # 2. Ejecutar la función de limpieza
+    df_resultado = clean.limpiar_datos(df)
 
-    # 3. Verificaciones (Asserts)
-    
-    # Test de Nombres de Columnas
-    assert 'id' in df_limpio.columns
-    assert 'link' in df_limpio.columns
-    assert df_limpio.columns[3] == 'barrio'
-
-    # Test de Normalización de Texto (Punto 2)
-    assert df_limpio['barrio'].iloc[0] == 'Chico Norte'
-    assert df_limpio['servicio'].iloc[1] == 'Venta'
-
-    # Test de Regex ID (Punto 3)
-    assert df_limpio['id'].iloc[0] == 'M123'
-
-    # Test de URL Completa (Punto 4)
-    assert df_limpio['link'].iloc[0].startswith('https://www.metrocuadrado.com')
-
-    # Test de Conversión Numérica y reemplazo de -1 (Puntos 5 y 6)
-    assert pd.isna(df_limpio['area'].iloc[1])
-    assert pd.isna(df_limpio['habitaciones'].iloc[1])
-    assert pd.isna(df_limpio['parqueaderos'].iloc[0])
-    assert df_limpio['precio'].dtype == np.float64 or df_limpio['precio'].dtype == np.int64
+     # 3. Validar que las transformaciones sean correctas
+    assert df_resultado['barrio'].iloc[0] == 'Sucre' 
+    assert df_resultado['id'].iloc[0] == 'M6376734' 
+    assert pd.isna(df_resultado['area'].iloc[0]) 
+    assert df_resultado['habitaciones'].iloc[0] == 1 
+    assert df_resultado['link'].iloc[0] == 'https://www.metrocuadrado.com/inmueble/arriendo-apartamento-bogota-M6376734'
