@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Modulo de limpieza y análitica de datos de viviendas bogota"
+version = "0.1.0"
+description = "Funciones de análisis contable y datos"
+requires-python = ">=3.8"
+dependencies = [
+    "pandas",
+    "numpy",
+]
