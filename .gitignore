@@ -1,0 +1,44 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ===== Entornos virtuales =====
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# ===== IDE / Editor =====
+.vscode/
+.idea/
+*.swp
+
+# ===== Sistema operativo =====
+.DS_Store
+Thumbs.db
+
+# ===== Vagrant (estado de la VM) =====
+.vagrant/
+
+# ===== Datalake local de Google Drive (NO se versiona) =====
+# Los datos crudos viven en Drive; se descargan/sincronizan localmente.
+viviendas_drive/
+
+# ===== Datos generados por el pipeline =====
+# Se versiona solo el dataset de muestra (data/sample/).
+data/raw/
+data/processed/
+*.html
+!data/sample/**
+
+# ===== Reportes/artefactos temporales =====
+*.log

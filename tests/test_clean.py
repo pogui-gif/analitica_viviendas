@@ -28,3 +28,14 @@ def test_limpiar_datos():
     assert pd.isna(df_resultado['area'].iloc[0]) 
     assert df_resultado['habitaciones'].iloc[0] == 1 
     assert df_resultado['link'].iloc[0] == 'https://www.metrocuadrado.com/inmueble/arriendo-apartamento-bogota-M6376734'
+
+
+def test_barrio_con_zona_concatenada():
+    """Regresion: el barrio a veces llega como 'Barrio   Zona' (espacios dobles);
+    debe quedarse solo con el barrio."""
+    datos = [{
+        0: '/inmueble/x-M6017977', 1: 'img', 2: 'foto', 3: 'LA CASTELLANA   Zona Urbana',
+        4: 'ARRIENDO', 5: '$2.000.000', 6: '2000000', 7: 50.0, 8: 2, 9: 1.0, 10: 1,
+    }]
+    df = clean.limpiar_datos(pd.DataFrame(datos))
+    assert df['barrio'].iloc[0] == 'La Castellana'

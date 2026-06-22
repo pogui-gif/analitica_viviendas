@@ -1,0 +1,3 @@
+# Los scripts de shell deben usar saltos de línea LF aunque se editen en Windows
+# (de lo contrario fallan en la VM con errores tipo: $'\r': command not found)
+*.sh text eol=lf

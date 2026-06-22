@@ -10,6 +10,10 @@ def limpiar_datos(df):
     df.columns = ['href', 'url_img', 'alt_img', 'barrio', 'servicio', 'precio_str', 'precio', 'area', 'habitaciones', 'banos', 'parqueaderos']
     
     # 2. Normalización de datos de texto (Capitalización y limpieza de espacios)
+    # El barrio a veces llega concatenado con la zona/localidad separada por
+    # espacios dobles (ej. "La Castellana   Zona Urbana"); nos quedamos con el
+    # primer segmento antes del primer run de 2+ espacios.
+    df['barrio'] = df['barrio'].str.split(r'\s{2,}', regex=True).str[0]
     df['barrio'] = df['barrio'].str.title().str.strip()
     df['servicio'] = df['servicio'].str.title().str.strip()
     df['alt_img'] = df['alt_img'].str.title().str.strip()
