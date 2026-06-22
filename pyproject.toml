@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "modulo_analitics"
+version = "0.1.0"
+description = "Pipeline ETL + analitica + agente IA para arriendos en Bogota (Metrocuadrado)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas",
+    "numpy",
+    "beautifulsoup4",
+]
+
+[project.optional-dependencies]
+# Scraping en vivo (fase de extraccion)
+scrape = ["playwright"]
+# Sincronizacion del datalake desde Google Drive
+drive = ["gdown"]
+# Dashboard interactivo
+dashboard = ["streamlit", "plotly"]
+# Exportacion BI / Power BI (Parquet)
+bi = ["pyarrow"]
+# Agente de IA local (LM Studio, API compatible con OpenAI)
+ai-local = ["openai"]
+# Agente de IA con Claude
+ai-anthropic = ["anthropic"]
+# Agente de IA con Google Gemini
+ai-gemini = ["google-genai"]
+# Pruebas
+dev = ["pytest"]
+# Todo el stack de una vez
+all = ["playwright", "gdown", "streamlit", "plotly", "pyarrow", "openai", "anthropic", "google-genai", "pytest"]
+
+# --- Empaquetado: layout src/ ----------------------------------------------
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# --- Configuracion de pruebas ----------------------------------------------
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

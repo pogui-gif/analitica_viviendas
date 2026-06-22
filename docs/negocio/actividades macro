@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.4">
+  <diagram name="Página-1" id="cE-gQnPF1NDduDUNrBnG">
+    <mxGraphModel grid="1" page="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6VDzrgKenCZOLm9dtokU-13" edge="1" parent="1" source="6VDzrgKenCZOLm9dtokU-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="6VDzrgKenCZOLm9dtokU-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6VDzrgKenCZOLm9dtokU-16" edge="1" parent="1" source="6VDzrgKenCZOLm9dtokU-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="6VDzrgKenCZOLm9dtokU-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6VDzrgKenCZOLm9dtokU-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&amp;nbsp;obtención&amp;nbsp; de los datos" vertex="1">
+          <mxGeometry height="80" width="160" x="120" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="6VDzrgKenCZOLm9dtokU-3" edge="1" parent="1" source="6VDzrgKenCZOLm9dtokU-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="6VDzrgKenCZOLm9dtokU-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6VDzrgKenCZOLm9dtokU-2" parent="1" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" value="paginas web" vertex="1">
+          <mxGeometry height="80" width="120" x="140" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="6VDzrgKenCZOLm9dtokU-14" edge="1" parent="1" source="6VDzrgKenCZOLm9dtokU-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="6VDzrgKenCZOLm9dtokU-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6VDzrgKenCZOLm9dtokU-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Análisis de los datos" vertex="1">
+          <mxGeometry height="80" width="160" x="360" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="6VDzrgKenCZOLm9dtokU-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="python" vertex="1">
+          <mxGeometry height="30" width="60" x="360" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="6VDzrgKenCZOLm9dtokU-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="pandas" vertex="1">
+          <mxGeometry height="30" width="60" x="360" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="6VDzrgKenCZOLm9dtokU-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="csv" vertex="1">
+          <mxGeometry height="30" width="60" x="360" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="OuPuGroG86wtZc3qbiMO-2" edge="1" parent="1" source="6VDzrgKenCZOLm9dtokU-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="OuPuGroG86wtZc3qbiMO-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6VDzrgKenCZOLm9dtokU-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="procesamiento de los datos" vertex="1">
+          <mxGeometry height="80" width="160" x="600" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="6VDzrgKenCZOLm9dtokU-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="python" vertex="1">
+          <mxGeometry height="30" width="60" x="600" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="6VDzrgKenCZOLm9dtokU-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="pandas" vertex="1">
+          <mxGeometry height="30" width="60" x="600" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="6VDzrgKenCZOLm9dtokU-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="csv" vertex="1">
+          <mxGeometry height="30" width="60" x="600" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="6VDzrgKenCZOLm9dtokU-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="sql" vertex="1">
+          <mxGeometry height="30" width="60" x="600" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="6VDzrgKenCZOLm9dtokU-15" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="csv" vertex="1">
+          <mxGeometry height="80" width="60" x="170" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="OuPuGroG86wtZc3qbiMO-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="modelos" vertex="1">
+          <mxGeometry height="80" width="160" x="840" y="240" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,7 +1,7 @@
 import pytest
 import pandas as pd
 # Importamos la función principal y la de apoyo lógica
-from src.modulo_analitics.extract import extraer_datos, filtrar_atributos
+from modulo_analitics.extract import extraer_datos, filtrar_atributos
 
 # --- 1. PRUEBA DE UNIDAD: filtrar_atributos ---
 # Probamos la lógica matemática sin necesidad de HTML complejo
@@ -16,6 +16,15 @@ def test_filtrar_atributos_logica():
     assert resultado["area"] == 45.0
     assert resultado["habitaciones"] == 2
     assert resultado["banos"] == 1.0
+    assert resultado["parqueaderos"] == 1
+
+# Regresion: el HTML real de Metrocuadrado usa 'm²' (superindice) y puntos en
+# las etiquetas ('1 hab.'); el area no debe perderse.
+def test_filtrar_atributos_superindice_m2():
+    resultado = filtrar_atributos(["90 m²", "1 hab.", "2 bañ.", "1 par."])
+    assert resultado["area"] == 90.0
+    assert resultado["habitaciones"] == 1
+    assert resultado["banos"] == 2.0
     assert resultado["parqueaderos"] == 1
 
 # --- 2. PRUEBA DE INTEGRACIÓN: extraer_datos ---

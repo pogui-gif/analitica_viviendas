@@ -1,0 +1,22 @@
+# Núcleo (ETL + analítica)
+pandas
+numpy
+beautifulsoup4
+
+# Scraping en vivo (opcional) — requiere además: playwright install chromium
+playwright
+
+# Sincronización del datalake desde Google Drive
+gdown
+
+# Dashboard
+streamlit
+plotly
+
+# Exportación BI / Power BI (Parquet)
+pyarrow
+
+# Agente de IA — local (LM Studio), Claude y/o Gemini
+openai
+anthropic
+google-genai
